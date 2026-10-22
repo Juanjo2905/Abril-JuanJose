@@ -13,39 +13,41 @@
     <title>Pagina club deportivo</title>
 
     <!-- Archivo de estilo CSS -->
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilos.css">
 
 </head>
 
 <body>
-    <!-- Enlace de salto para mejorar la accesibilidad -->
-    <a class="skip-link" href="#contenido">Salto al contenido</a>
+    <!-- Enlace de salto para mejorar la accesibilidad WCAG-->
+    <a class="skip-link" href="#contenido">Salto al contenido principal</a>
 
     <!-- Encabezado de la pagina con header -->
     <header>
         <!-- Uso de la etiqueta div para poner un nombre o titulo principal-->
         <div class="marcaprincipal">
-
+            <img src="img/pelota.png" alt="Logo del club deportivo">
             <!-- Uso de la etiqueta h1 para el titulo principal (solo 1 en la pagina web) -->
             <h1>Club Deportivo</h1>
 
         </div>
 
         <!-- Uso de la etiqueta nav para el menú de navegación -->
-        <nav aria-label="Menú de navegación">
+        <nav aria-label="Menú de navegación principal">
             <a href="#contenido">Contenido</a>
             <a href="#masinformacion">Mas información</a>
             <a href="#preguntasfrecuentes">Preguntas frecuentes</a>
         </nav>
 
     </header>
+
+    <!-- Etiqueta main con id="contenido" para hacer referencia al contenido principal -->
     <main id="contenido">
 
         <!-- Seccion 1 para Lista de clubes deportivos -->
-        <section id="lista-clubes-deportivos" aria-labelledby="Lista de clubes deportivos">
+        <section id="lista-clubes-deportivos" aria-labelledby="titulo-clubes-deportivos">
 
             <!-- Uso de la etiqueta h2 para el título de la sección Lista de clubes deportivos-->
-            <h2>Lista de clubes deportivos</h2>
+            <h2 id="titulo-clubes-deportivos">Lista de clubes deportivos</h2>
 
             <!-- Lista de los clubes deportivos -->
             <div id="lista-visible-clubes-deportivos" class="clubes">
@@ -62,10 +64,10 @@
         </section>
 
         <!-- Seccion 2 para Formulario de inscripción a los clubes-->
-        <section id="formulario" aria-label="Formulario de inscripción a los clubes deportivos">
+        <section id="formulario" aria-labelledby="titulo-formulario">
 
             <!-- Uso de la etiqueta h2 para el título de la sección Formulario-->
-            <h2>Formulario de inscripción</h2>
+            <h2 id="titulo-formulario">Formulario de inscripción</h2>
 
             <!-- Creacion del formulario usando la etiqueta form con accion vacia y con metodo POST-->
             <form id="form-inscripcion" action="#" method="POST">
@@ -97,7 +99,7 @@
                     <!-- Cuarto campo usando fieldset y radio buttons para seleccionar el deporte de preferencia,
                         el fieldset es muy importante para la accesibilidad 
                     -->
-                    <fieldset class="radiobutton">
+                    <fieldset>
 
                         <!-- Título del fieldset -->
                         <legend>Seleccione el deporte de su preferencia:</legend>
@@ -127,38 +129,47 @@
                         <legend>Seleccione su nivel de experiencia:</legend>
 
                         <!-- Creacion de todos los checkboxes separados por div para mejorar la accesibilidad -->
-                        <div class="checkbox" >
+                        <div class="checkbox">
                             <input type="checkbox" id="nulo" name="nivel-experiencia" value="nulo">
                             <label for="nulo">Experiencia nula</label>
                         </div>
 
-                        <div class="checkbox" >
+                        <div class="checkbox">
                             <input type="checkbox" id="basica" name="nivel-experiencia" value="basica">
                             <label for="basica">Experiencia básica</label>
                         </div>
 
-                        <div class="checkbox" >
+                        <div class="checkbox">
                             <input type="checkbox" id="intermedia" name="nivel-experiencia" value="intermedia">
                             <label for="intermedia">Experiencia intermedia</label>
                         </div>
 
                     </fieldset>
+
+                    <!-- Boton para enviar el formulario -->
+                    <div class="campo-boton">
+
+                        <!-- Boton de tipo submit para permitir el envio nativo del formulario-->
+                        <button type="submit">Completar Inscripción</button>
+
+                    </div>
+
                 </fieldset>
             </form>
 
         </section>
 
         <!-- Seccion 3 para tabla de horarios y precios-->
-        <section id="tabla-horarios-precios">
+        <section id="tabla-horarios-precios" aria-labelledby="titulo-tabla-horarios-precios">
 
             <!-- Uso de la etiqueta h2 para el título de la sección -->
-            <h2 >Tabla de horarios y precios</h2>
+            <h2 id="titulo-tabla-horarios-precios">Tabla de horarios y precios</h2>
 
             <!-- Pequena descripción de la sección -->
             <p>La siguiente tabla muestra los horarios y precios de los clubes deportivos:</p>
 
             <!-- Uso de la etiqueta table para crear la tabla -->
-            <table> 
+            <table>
 
                 <!-- Titulo de la tabla usando caption -->
                 <caption>Horarios y precios de los clubes deportivos</caption>
@@ -167,33 +178,33 @@
                 <thead>
 
                     <!-- Uso de la etiqueta tr para crear la fila del encabezado -->
-                    <tr> 
+                    <tr>
                         <!-- Uso de la etiqueta th para crear los encabezados de cada columna -->
                         <th scope="col">Club Deportivo</th>
-                        <th scope="col">Dias</th>
+                        <th scope="col">Días</th>
                         <th scope="col">Horario</th>
                         <th scope="col">Precio</th>
                     </tr>
                 </thead>
 
                 <!-- Creacion del cuerpo de la tabla usando tbody -->
-                <tbody> 
-                    <tr> 
+                <tbody>
+                    <tr>
                         <th scope="row">Fútbol</th>
                         <td> Lunes, Miércoles y Viernes</td>
                         <td> 6:00 PM - 8:00 PM</td>
                         <td> $50</td>
                     </tr>
 
-                    <tr> 
+                    <tr>
                         <th scope="row">Baloncesto</th>
                         <td> Lunes, Miércoles y Viernes</td>
                         <td> 6:00 PM - 8:00 PM</td>
                         <td> $20</td>
                     </tr>
 
-                    <tr> 
-                        <th scope="row" >Tenis</th>
+                    <tr>
+                        <th scope="row">Tenis</th>
                         <td> Martes y Jueves</td>
                         <td> 5:00 PM - 7:00 PM</td>
                         <td> $30</td>
@@ -205,21 +216,21 @@
         </section>
     </main>
 
-        <!-- Creacion del aside para más información (barra lateral)-->
-        <aside id="masinformacion" aria-label="Más información sobre los clubes deportivos">
-            <h2>Más información</h2>
-            <p>Para más información sobre los clubes deportivos, por favor contáctenos a través de nuestro correo
-                electrónico.</p>
+    <!-- Creacion del aside para más información (barra lateral)-->
+    <aside id="masinformacion" aria-labelledby="titulo-mas-informacion">
 
-        </aside>
+        <h2 id="titulo-mas-informacion">Más información</h2>
 
-        <!-- Seccion 3 para pie de pagina-->
-        <footer>
-            <p>Programado por: Juan Jose Abril. Facultad de Ingeniería</p>
-        </footer>
+        <p>Para más información sobre los clubes deportivos, por favor contáctenos a través de nuestro correo
+            electrónico.</p>
 
+    </aside>
 
-    </main>
+    <!-- Landmark para pie de pagina-->
+    <footer>
+        <p>Programado por: Juan Jose Abril. Facultad de Ingeniería</p>
+    </footer>
+
 </body>
 
 </html>

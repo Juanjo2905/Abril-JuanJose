@@ -1,0 +1,175 @@
+/*Variables para colores */
+:root {
+    --color-fondo: #f4f4f4;       /* Fondo gris claro */
+    --color-texto: #000000;       /* Texto negro (contraste máximo) */
+    --color-azul: #004494;        /* Azul para botones */
+    --color-blanco: #ffffff;      /* Texto blanco */
+    --color-foco: #d97706;          /* Color de contraste del foco*/
+}
+
+/* Regla para mantener el contenido en celulares y no se desborde (360px) */
+* {
+    box-sizing: border-box;
+}
+
+/*Estilo de la pagina*/
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 900px;
+
+    /* Tipografia fluida que escala sin media queries */
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Configuracion de la tipografia de la etiqueta h1 */
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+/* Configuracion de la tipografia de la etiqueta h2 */
+h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+/*Menu con flexbox para un movimiento dinamico de los enlaces */
+nav {
+    background-color: var(--color-azul);
+    
+    display: flex;
+
+    /* Si el contenido no da en un celular, bajan ordenadamente */
+    flex-wrap: wrap;             
+
+    /* Separación entre botones (enlaces) */
+    gap: 10px;
+
+    /* Centra los botones (enlaces) */
+    justify-content: center;     
+}
+
+/*Configuracion de los enlaces en el menu */
+nav a {
+
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+
+    /*Quitamos el subrayado*/
+    text-decoration: none;       
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Uso de GRID para la distribucion en pantallas grandes*/
+@media (min-width: 900px) {
+    body {
+        display: grid;
+
+        grid-template-columns: 3fr 3fr; /* 2 columnas a partir de 900px */
+
+        /* Separación entre el contenido principal y la barra lateral */
+        gap: 20px;
+    }
+
+    header, nav, footer {
+        /* Ocupan todo el ancho superior e inferior */
+        grid-column: 1 / -1;            
+    }
+}
+
+/* Oculta el enlace visualmente de la pantalla */
+.skip-link {
+    position: absolute;
+
+    /* Lo saca fuera de la pantalla hacia arriba */
+    top: -100px; 
+
+    left: 0;
+    background: var(--color-azul);
+    color: var(--color-blanco);
+    padding: 10px 15px;
+    text-decoration: none;
+
+    /* Asegura que quede por encima de todo cuando aparezca */
+    z-index: 100; 
+    border-radius: 0 0 5px 0;
+}
+
+/* Hacemos que aparezca en pantalla cuando el usuario presiona la tecla TAB */
+.skip-link:focus {
+    /* Cambiamos de posicion para hacerlo visible */
+    top: 0; 
+}
+
+/* Evita que tablas e imágenes generen scroll en celulares */
+table, img {
+    max-width: 100%;
+}
+
+/* Permite desplazar solo la tabla si es muy ancha */
+section {
+    overflow-x: auto;                   
+}
+
+/*Diseño de la tabla para que se vea bien en celulares y pantallas grandes*/
+table {
+    /* Ocupa todo el ancho de su contenedor */
+    width: 100%;              
+
+    /* Une los bordes dobles en una sola línea limpia */
+    border-collapse: collapse;    
+    margin-top: 15px;
+    background-color: var(--color-superficie);
+}
+
+/* Diseno del titulo de la tabla */
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Diseno de las celdas de la tabla */
+th, td {
+
+    /* Borde de 1px sólido con color de texto */
+    border: 1px solid var(--color-texto); 
+
+    /* Da espacio interno para que el texto no quede pegado */
+    padding: 12px;
+
+    /* Alinea el texto al medio */
+    text-align: center;                     
+}
+
+/* Diseno del encabezado de la tabla */
+thead th {
+
+    /* Fondo azul para el encabezado */
+    background-color: var(--color-azul);
+    
+    /* Texto blanco de alto contraste */
+    color: var(--color-blanco);           
+}
+
+/* Diseno del foco visible para mejorar la accesibilidad y la navegación con teclado */
+:focus-visible {
+    outline: 3px solid var(--color-foco);
+    outline-offset: 2px;
+}
+
+/* Configuracion del diseno marcaprincipal para centrar la imagen y el h1 */
+.marcaprincipal {
+    display: flex;
+    align-items: center;      /* Centra la imagen verticalmente con el h1 */
+    justify-content: center;  /* Centra el bloque en el medio de la pantalla */
+    gap: 15px;                /* Espacio de 15px entre la pelota y el título */
+}
+
+/* Configuracion del tamano de la imagen del titulo */
+.marcaprincipal img {
+    width: 45px;              /* Define un tamaño adecuado para el logo */
+    height: auto;             /* Mantiene la proporción sin deformarla */
+}
