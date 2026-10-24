@@ -82,18 +82,21 @@
                     <div class="campo">
                         <label for="nombre">Nombres:</label>
                         <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50">
+                        <small id="ayuda-nombre">Ingresa tu nombre completo (mínimo 3 letras).</small>
                     </div>
 
                     <!-- Segundo campo para los apellidos del estudiante-->
                     <div class="campo">
                         <label for="apellidos">Apellidos:</label>
                         <input type="text" id="apellidos" name="apellidos" required minlength="3" maxlength="50">
+                        <small id="ayuda-apellidos">Ingresa tus apellidos completos (mínimo 3 letras).</small>
                     </div>
 
                     <!-- Tercer campo para el numero de celular del estudiante-->
                     <div class="campo">
                         <label for="celular">Número de celular:</label>
                         <input type="tel" id="celular" name="celular" required pattern="[0-9]{10}">
+                        <small id="ayuda-celular">Ingresa exactamente 10 dígitos numéricos sin espacios ni guiones.</small>
                     </div>
 
                     <!-- Cuarto campo usando fieldset y radio buttons para seleccionar el deporte de preferencia,
