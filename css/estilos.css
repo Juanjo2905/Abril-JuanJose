@@ -3,8 +3,8 @@
     --color-fondo: #f4f4f4;       /* Fondo gris claro */
     --color-texto: #000000;       /* Texto negro (contraste máximo) */
     --color-azul: #004494;        /* Azul para botones */
-    --color-blanco: #ffffff;      /* Texto blanco */
-    --color-foco: #d97706;          /* Color de contraste del foco*/
+    --color-blanco: #ffffff;      /* Color blanco */
+    --color-foco: #000000;          /* Color de contraste del foco*/
 }
 
 /* Regla para mantener el contenido en celulares y no se desborde (360px) */
@@ -36,7 +36,7 @@ h2 {
 
 /*Menu con flexbox para un movimiento dinamico de los enlaces */
 nav {
-    background-color: var(--color-azul);
+    background-color: #e6ecf2;
     
     display: flex;
 
@@ -52,9 +52,9 @@ nav {
 
 /*Configuracion de los enlaces en el menu */
 nav a {
-
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
+    
+    /* Color para los botones de enlaces*/
+    color: var(--color-texto);
 
     /*Quitamos el subrayado*/
     text-decoration: none;       
@@ -121,7 +121,7 @@ table {
     /* Une los bordes dobles en una sola línea limpia */
     border-collapse: collapse;    
     margin-top: 15px;
-    background-color: var(--color-superficie);
+    background-color: var(--color-blanco); /* Fondo blanco para la tabla */
 }
 
 /* Diseno del titulo de la tabla */
