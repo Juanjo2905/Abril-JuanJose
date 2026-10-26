@@ -14,13 +14,23 @@
 
 /*Estilo de la pagina*/
 body {
+    /* Color de fondo de la pagina web */
     background-color: var(--color-fondo);
+
+    /* Define el color general del texto dentro de la pagina web*/
     color: var(--color-texto);
+
+    /* Centra el contenido horizontalmente */
     margin: 0 auto;
-    padding: 10px;
+
+    /* Agrega un espacio interno de 10px alrededor de todo el contenido */
+    padding:10px;
+
     max-width: 900px;
 
     /* Tipografia fluida que escala sin media queries */
+    /* (minimo, valor ideal, maximo) */ 
+    /* vw (valor de ventana %)*/
     font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
@@ -65,6 +75,7 @@ nav a {
 /* Uso de GRID para la distribucion en pantallas grandes*/
 @media (min-width: 900px) {
     body {
+        /* Convierte el body en un contenedor de cuadrícula */
         display: grid;
 
         grid-template-columns: 3fr 3fr; /* 2 columnas a partir de 900px */
@@ -75,6 +86,7 @@ nav a {
 
     header, nav, footer {
         /* Ocupan todo el ancho superior e inferior */
+        /* Le dice al elemento dónde empezar y dónde terminar dentro de la cuadrícula */
         grid-column: 1 / -1;            
     }
 }
@@ -157,6 +169,8 @@ thead th {
 /* Diseno del foco visible para mejorar la accesibilidad y la navegación con teclado */
 :focus-visible {
     outline: 3px solid var(--color-foco);
+
+    /* Espacio de separación entre el foco y el elemento */
     outline-offset: 2px;
 }
 
