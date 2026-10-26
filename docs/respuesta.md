@@ -1,4 +1,4 @@
-# Respuesta a informde de auditoría recibida — Parte 3: Respuesta y corrección
+# Respuesta a informe de auditoría recibida — Parte 3: Respuesta y corrección
 
 | N.º Hallazgo | Decisión (Acepta/Refuta) | Justificación con la norma | Evidencia antes y después | Commit |
 | :---: | :--- | :--- | :--- | :--- |
